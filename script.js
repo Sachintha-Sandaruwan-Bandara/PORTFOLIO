@@ -21,52 +21,83 @@
 // //   stagger: 0.3,
 // // });
 
-
 // //nav
 
-// var main = document.querySelector("#page1");
-// var cursor = document.querySelector("#cursor");
+// curser follower
+var main = document.querySelector("#main");
+var cursor = document.querySelector("#cursor");
 
-// main.addEventListener("mousemove", function (dets) {
-//   gsap.to("#cursor", {
-//     y: dets.y,
-//     x: dets.x,
-  
-  
-//   });
- 
-// })
+main.addEventListener("mousemove", function (dets) {
+  gsap.to("#cursor", {
+    y: dets.y,
+    x: dets.x,
+  });
+});
 
 
+// Get all elements with the class name 'cursorBold'
+const elements = document.querySelectorAll(".cursorBold");
 
+// Loop through each element and add event listeners
+elements.forEach(element => {
+  element.addEventListener('mouseenter', function() {
+    // Set styles for hover
+    // cursor.style.height = "50px";
+    // cursor.style.width = "50px";
+     gsap.to(cursor, { duration: 0.5, scale:6 });
+  });
+
+  element.addEventListener('mouseleave', function() {
+    // Reset styles when not hovering
+ gsap.to(cursor, { duration: 0.5,scale:1 });
+  });
+});
+
+var options = {
+  animate: true,
+  patternWidth: 500,
+  patternHeight: 500,
+  grainOpacity: 0.20,
+  grainDensity: 1,
+  grainWidth: 1,
+  grainHeight: 1,
+  zindex:1,
+};
+grained("#main", options);
+
+
+
+
+
+//add styles when cursor hover
 
 // // page1
-// gsap.to("#name2", {
-//   y: -1600,
-//   delay: 1,
-//   duration: 2,
+gsap.to("#greet", {
+  y: -500,
+  delay: 1,
+  duration: 2,ease: "bounce",
 
+  scrollTrigger: {
+    trigger: "#greet",
+    scroller: "body",
+    start: "top 3%",
+    scrub: true,
+    
+  },
+});
 
-//   scrollTrigger: {
-//     trigger: "#name1",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
+gsap.to("#name", {
+  y: 1000,
+  delay: 1,
+  duration: 2,
 
-// gsap.to("#name1", {
-//   y: 1000,
-//   delay: 1,
-//   duration: 2,
-
-//   scrollTrigger: {
-//     trigger: "#name1",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
+  scrollTrigger: {
+    trigger: "#greet",
+    scroller: "body",
+    start: "top 3%",
+    scrub: true,
+  },
+});
 
 // // gsap.to("#image", {
 // //     scale: 5,
@@ -80,57 +111,77 @@
 // //   },
 // // });
 
-// gsap.to("#job", {
-//   opacity: 0,
-//   x: 350,
-//   color: "white",
-//   scrollTrigger: {
-//     trigger: "#job",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
+gsap.to("#job1", {
+  opacity: 0,
+  x: -350,
+  scale:10,
+  color: "white",
+  scrollTrigger: {
+  scroller: "body",
+    start: "top 3%",
+    scrub: true,
+  },
+});
 
-// gsap.to("#job1", {
-//   opacity: 0,
-//   x: 350,
-//     scale: 3,
-//   color:"white",
-//   scrollTrigger: {
-//     trigger: "#job1",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
+gsap.to("#job2", {
+  opacity: 0,
+  x: 350,
+    scale: 10,
+  color:"white",
+  scrollTrigger: {
+   scroller: "body",
+    start: "top 3%",
+    scrub: true,
+  },
+});
 
-// gsap.to("nav ul", {
-//   opacity: 0,
-//   y:30,
+gsap.to("nav ul", {
+  opacity: 0,
+  y:500,
 
-//   color: "white",
-//   scrollTrigger: {
-//     trigger: "#job1",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
-
-// gsap.from("#navBar", {
-
-//     y: -650,
-//     x: 650,
-//     opacity:0,
  
-  
+  scrollTrigger: {
+   
+    scroller: "body",
+    start: "top 0%",
+    scrub: true,
+  },
+});
 
-//   color: "white",
-//   scrollTrigger: {
-//     trigger: "#job1",
-//     scroller: "body",
-//     start: "top 10%",
-//     scrub: true,
-//   },
-// });
+gsap.from("nav ul", {
+
+    y: -650,
+    x: 650,
+    opacity:0,
+
+  color: "white",
+  scrollTrigger: {
+    trigger: "#job1",
+    scroller: "body",
+    start: "top 3%",
+    scrub: true,
+  },
+});
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  // for (i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
+  slides[slideIndex - 1].style.display = "block";
+  // dots[slideIndex - 1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
