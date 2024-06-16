@@ -135,30 +135,30 @@ gsap.to("#job2", {
   },
 });
 
-gsap.to("nav ul", {
-  opacity: 0,
-  y:500,
+// gsap.to("nav ul", {
+//   opacity: 0,
+//   y:500,
 
  
-  scrollTrigger: {
+//   scrollTrigger: {
    
-    scroller: "body",
-    start: "top 0%",
-    scrub: true,
-  },
-});
+//     scroller: "body",
+//     start: "top 0%",
+//     scrub: true,
+//   },
+// });
 
-gsap.from("nav ul", {
+gsap.to("nav ul", {
 
-    y: -650,
-    x: 650,
-    opacity:0,
+    y: 900,
+    x: -600,
+    
 
   color: "white",
   scrollTrigger: {
-    trigger: "#job1",
+    trigger: "#greet",
     scroller: "body",
-    start: "top 3%",
+    start: "top 0%",
     scrub: true,
   },
 });

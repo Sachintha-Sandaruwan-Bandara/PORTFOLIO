@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Kumar+One+Outline&display=swap'); */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Kumar+One+Outline&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+SK:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+SK:wght@100..400&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 /*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/
 
 /* Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property */
@@ -62,7 +63,7 @@ textarea {
 body {
   background-color: black;
   color: white;
-  /* cursor: none; */
+  cursor: none;
 }
 #main {
   position: relative; /* Ensures the container is positioned correctly */
@@ -303,17 +304,17 @@ a {
   filter: grayscale(0%);
 }
 /* card style */
-.card{
+.card-work{
 
 
   cursor: pointer;
   border-radius: 15px;
-  background-color: red;
+  background-color: brown;
   padding: 5px;
   overflow: hidden;
   
 }
-.card img{
+.card-work img{
 object-fit: cover;
 }
 .card4{
@@ -423,6 +424,7 @@ width: 320px;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
+  cursor: pointer;
 }
 
 .image-container {
@@ -589,6 +591,19 @@ width: 320px;
   
   
 }
+.about-me-card p{
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+
+  
+  
+}
+
+.year{
+  padding: 10px;
+  color: gray;
+}
 .about-me-card img{
   object-fit: cover;
   border-radius: 15px;
@@ -605,6 +620,13 @@ width: 320px;
 }
 .background p{
   max-width: 400px;
+}
+.background span{
+font-family: "Playwrite SK", cursive;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 40px;
 }
 .tool-stack{
 display: flex;
@@ -688,6 +710,9 @@ object-fit: cover;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+#page4{
+  height: 450vh;
+}
 }
 
 @media (max-width: 780px) {
@@ -702,4 +727,91 @@ width:20px;
   grid-template-columns: 1fr ;
   gap: 20px;
 }
+#page4{
+  height: 500vh;
+}
+}
+
+/* social */
+.contact{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  display: flex;
+  height: 70px;
+  width: 270px;
+}
+
+.card svg {
+  position: absolute;
+  display: flex;
+  width: 60%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  opacity: 1;
+  transition: opacity 0.25s;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.card .social-link1,.card .social-link2,.card .social-link3,.card .social-link4 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 24px;
+  text-decoration: none;
+  transition: 0.25s;
+  border-radius: 50px;
+}
+
+.card svg {
+  transform: scale(1);
+}
+
+/* .card .social-link1:hover {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  animation: bounce_613 0.4s linear;
+} */
+
+/* .card .social-link2:hover {
+  background-color: #00ccff;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link3:hover {
+  background-color: #5865f2;
+  animation: bounce_613 0.4s linear;
+}
+
+.card .social-link4:hover {
+  background-color: #12a50b;
+  animation: bounce_613 0.4s linear;
+} */
+
+@keyframes bounce_613 {
+  40% {
+    transform: scale(1.4);
+  }
+
+  60% {
+    transform: scale(0.8);
+  }
+
+  80% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
