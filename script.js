@@ -148,20 +148,20 @@ gsap.to("#job2", {
 //   },
 // });
 
-gsap.to("nav ul", {
+// gsap.to("nav ul", {
 
-    y: 900,
-    x: -600,
+//     y: 900,
+//     x: -600,
     
 
-  color: "white",
-  scrollTrigger: {
-    trigger: "#greet",
-    scroller: "body",
-    start: "top 0%",
-    scrub: true,
-  },
-});
+//   color: "white",
+//   scrollTrigger: {
+//     trigger: "#greet",
+//     scroller: "body",
+//     start: "top 0%",
+//     scrub: true,
+//   },
+// });
 
 
 let slideIndex = 0;
